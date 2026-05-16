@@ -132,7 +132,7 @@ Output menampilkan chunks yang ter-retrieve beserta skor similarity (cosine dist
 ```bash
 cd scripts
 
-# Full validasi (40 test cases, pakai Gemma — ~8 menit)
+# Full validasi (40 test cases, pakai Gemma — ~15-20 menit di MacBook M5)
 python 05_validate.py
 
 # Quick mode (hanya classify + retrieve, ~30 detik)
@@ -211,7 +211,7 @@ python 01_ingest.py                     # rebuild ChromaDB index
 | `ERROR: Tidak bisa konek ke Ollama` | Ollama service mati | Jalankan `ollama serve` di terminal terpisah |
 | `ERROR: Model nomic-embed-text belum di-pull` | Model belum diunduh | `ollama pull nomic-embed-text` |
 | `Collection not found` | ChromaDB belum di-build | `python 01_ingest.py` |
-| Retrieval mengambil chunk salah | Embedding kurang tepat | Tambah keyword di chunk; coba `bge-m3` sebagai embedding model |
+| Retrieval mengambil chunk salah | Embedding kurang tepat atau `konsep_terkait` incomplete | Verifikasi field `konsep_terkait` di frontmatter chunk; pastikan keyword unik dan relevan ada di chunk content; eksperimen dengan embedding model lain jika kualitas retrieval konsisten kurang |
 | Gemma jawab salah meski chunk benar | LLM terlalu kecil atau temperature tinggi | Coba `qwen2.5:7b`; turunkan temperature di Modelfile |
 | `chroma_db/` rusak | Disk penuh atau proses terputus | Hapus folder, re-ingest dari awal |
 

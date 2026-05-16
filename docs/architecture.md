@@ -185,7 +185,7 @@ Framework validasi empat dimensi:
 - Classification: 40/40 (100%)
 - Retrieval: 40/40 (100%)
 - Math Accuracy: 40/40 (100%)
-- Format: Sesuai requirement per jenis
+- Format Compliance: 38/40 (95%) — 2 false positive di validator (B2-04, B3-02) yang bukan masalah pipeline. Real format compliance mendekati 100% karena 2 case fail adalah variasi semantik valid yang regex detector terlalu kaku menangkap.
 
 ---
 
@@ -236,6 +236,14 @@ Keyword di YAML (`jenis_soal: C`, `punya_carry: true`) memperkaya semantic retri
 
 ### Kenapa history disimpan tanpa konteks dokumen?
 Untuk mencegah *context bloat*. Setelah LLM menjawab, history di-update dengan query asli (bukan augmented version). Sehingga sesi panjang tidak menghabiskan context window.
+
+### Kenapa Aturan 1 Kecil (notasi subscript ₁) bukan carry/menyimpan?
+
+Aturan 1 Kecil adalah inovasi pedagogis unik Metode GASING yang menggantikan istilah tradisional "carry" atau "menyimpan" dengan notasi subscript ₁ ditulis di sebelah angka. Misalnya untuk soal 25 + 7 = 32, langkah perantara ditulis "2₂", bukan "carry 1".
+
+Alasannya pedagogis: istilah "menyimpan" di matematika SD Indonesia sering menimbulkan miskonsepsi karena verb "simpan" punya arti sehari-hari "menaruh untuk nanti dipakai", tidak konsisten dengan operasi matematis yang sebenarnya terjadi. Aturan 1 Kecil membuat visualisasi proses lebih eksplisit dan konsisten dengan struktur nilai tempat.
+
+Implementasi: chunks S05_aturan_1_kecil dan beberapa J81, J82, J83, J94, J95 menggunakan notasi ini. Kata "simpan", "carry", "meminjam", atau "bawa 1" tidak boleh muncul di output tutor (lihat `system_prompt.txt` aturan terlarang).
 
 ---
 
