@@ -70,8 +70,11 @@ def parse_frontmatter(content):
 
 def load_chunks():
     chunks = []
-    for subdir in ("shared", "per_jenis"):
-        for path in sorted((CHUNKS_DIR / subdir).glob("*.md")):
+    for subdir in ("shared", "per_jenis", "filosofi"):
+        subdir_path = CHUNKS_DIR / subdir
+        if not subdir_path.exists():
+            continue
+        for path in sorted(subdir_path.glob("*.md")):
             content = path.read_text(encoding="utf-8")
             metadata, body = parse_frontmatter(content)
             chunks.append({"id": metadata.get("id", path.stem),
