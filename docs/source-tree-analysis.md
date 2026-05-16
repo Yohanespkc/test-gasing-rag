@@ -1,0 +1,142 @@
+# Analisis Source Tree: gasing-rag
+
+**Versi:** 1.0.0
+**Tanggal Dokumen:** 2026-05-17
+
+---
+
+## Struktur Direktori Lengkap
+
+```
+gasing-rag/                                 ← Project root
+│
+├── 📁 chunks/                              ← Knowledge base GASING (22 chunk .md)
+│   │   [CRITICAL] Isi knowledge base. Diedit manual atau via generate_*.py
+│   │   Setiap edit WAJIB diikuti python 01_ingest.py
+│   │
+│   ├── 📁 shared/                          ← 5 chunks konsep lintas jenis
+│   │   ├── S01_konfigurasi_jari.md         ← Cara hitung dengan jari
+│   │   ├── S02_komutativitas.md            ← Template penutup komutativitas
+│   │   ├── S03_format_mencongak_universal.md ← Format output mode C
+│   │   ├── S04_format_dua_cara.md          ← Dua cara presentasi jawaban
+│   │   └── S05_aturan_1_kecil.md           ← Notasi ₁ dan aturan carry GASING
+│   │
+│   └── 📁 per_jenis/                       ← 17 chunks aturan per jenis soal
+│       ├── J00_nol.md                      ← [Jenis Nol] X + 0 atau 0 + X
+│       ├── J10_a1.md                       ← [Jenis A1] 1d+1d hasil 1-5
+│       ├── J20_a2.md                       ← [Jenis A2] 1d+1d hasil 6-10
+│       ├── J30_b1.md                       ← [Jenis B1] 10 + X
+│       ├── J40_b2.md                       ← [Jenis B2] X + 10
+│       ├── J50_b3.md                       ← [Jenis B3] 1d+1d hasil 11-19
+│       ├── J60_c.md                        ← [Jenis C] 2 digit + 1 digit
+│       ├── J70_d.md                        ← [Jenis D] maks 2 digit
+│       ├── J81_e_tanpa_carry.md            ← [Jenis E] 3 digit, tanpa carry
+│       ├── J82_e_carry_satuan_puluhan.md   ← [Jenis E] 3 digit, carry biasa
+│       ├── J83_e_cascade_1_kecil.md        ← [Jenis E] 3 digit, cascade ₁
+│       ├── J91_f_pengantar_aturan.md       ← [Jenis F] 4d+ pengantar
+│       ├── J92_f_alignment_digit.md        ← [Jenis F] alignment kolom
+│       ├── J93_f_belajar_simple.md         ← [Jenis F] belajar tanpa carry
+│       ├── J94_f_belajar_cascade.md        ← [Jenis F] belajar cascade
+│       ├── J95_f_belajar_diff_digits.md    ← [Jenis F] operand beda panjang
+│       └── J96_f_mencongak.md              ← [Jenis F] mode mencongak
+│
+├── 📁 scripts/                             ← Semua pipeline Python
+│   │   [CRITICAL] Entry point utama: 03_chat.py
+│   │   [CRITICAL] Harus dijalankan dari dalam folder scripts/ (karena path relatif)
+│   │
+│   ├── utils.py                            ← [CORE] Library helper — SEMUA pipeline import ini
+│   ├── 01_ingest.py                        ← [INGEST] Load .md → embed → ChromaDB
+│   ├── 02_query.py                         ← [TEST] Standalone retrieval test
+│   ├── 03_chat.py                          ← [CHAT] Entry point interaktif utama
+│   ├── 05_validate.py                      ← [QA] Automated 40-case validation
+│   ├── generate_shared_chunks.py           ← [REGEN] Regenerasi S01-S05
+│   ├── generate_per_jenis_small.py         ← [REGEN] Regenerasi J00-J70
+│   ├── generate_per_jenis_complex.py       ← [REGEN] Regenerasi J81-J96
+│   ├── generate_aux_files.py               ← [REGEN] Regenerasi file pendukung
+│   ├── recheck.py                          ← [DEBUG] Quick sanity check
+│   ├── validation_report.json              ← [OUTPUT] Hasil validasi terakhir
+│   └── validation_log.txt                  ← [OUTPUT] Full Gemma response log
+│
+├── 📁 chroma_db/                           ← Vector store (dikelola ChromaDB)
+│   │   [GENERATED] Jangan edit manual. Hapus dan re-ingest jika korup.
+│   │   [GITIGNORE] Tidak perlu di-commit, dibuat ulang via 01_ingest.py
+│   └── ...
+│
+├── 📁 _bmad/                               ← BMAD Method tooling configuration
+│   │   [TOOLING] Bukan bagian dari aplikasi. Untuk dokumentasi workflow.
+│   ├── _config/
+│   ├── bmm/
+│   └── ...
+│
+├── 📁 docs/                                ← [GENERATED] Dokumentasi BMAD (folder ini)
+│   ├── index.md                            ← Master navigation index
+│   ├── project-overview.md                 ← Ringkasan eksekutif
+│   ├── architecture.md                     ← Arsitektur teknis lengkap
+│   ├── development-guide.md                ← Setup + workflow developer
+│   ├── component-inventory.md              ← Inventori semua komponen
+│   ├── source-tree-analysis.md             ← File ini
+│   └── project-scan-report.json           ← BMAD state file
+│
+├── 📁 .venv/                               ← Virtual environment Python
+│   │   [GITIGNORE] Tidak di-commit
+│   └── ...
+│
+├── Model-gasing-rag.modelfile              ← Custom Ollama modelfile
+│                                             (embed SYSTEM prompt + hyperparameter)
+├── system_prompt.txt                       ← SYSTEM prompt untuk runtime injection
+│                                             (dipakai 03_chat.py dan 05_validate.py)
+├── system_prompt_v44_ramping.md            ← SYSTEM prompt versi dokumentasi (referensi)
+├── chunks_index.json                       ← Metadata index semua 22 chunks
+├── requirements.txt                        ← Python dependencies
+├── README.md                               ← Arsitektur RAG dan cara regenerasi chunks
+├── SETUP.md                                ← Panduan setup step-by-step lengkap
+└── .gitignore                              ← Ignore: .venv/, chroma_db/, __pycache__/
+```
+
+---
+
+## Entry Points
+
+| Entry Point | Perintah | Fungsi |
+|---|---|---|
+| **Chat (utama)** | `python scripts/03_chat.py` | Mulai sesi chat interaktif dengan tutor GASING |
+| **Ingest** | `python scripts/01_ingest.py` | (Re)build vector index dari chunks |
+| **Query Test** | `python scripts/02_query.py "query"` | Test retrieval tanpa LLM |
+| **Validasi** | `python scripts/05_validate.py` | Jalankan 40 automated test cases |
+| **Create Model** | `ollama create gasing-rag -f Model-gasing-rag.modelfile` | Buat custom Ollama model |
+
+---
+
+## Folder Kritis vs Non-Kritis
+
+| Folder/File | Kritis? | Alasan |
+|---|---|---|
+| `chunks/` | ✅ Sangat kritis | Knowledge base — kerusakan → sistem tidak punya konten |
+| `scripts/utils.py` | ✅ Sangat kritis | Semua script lain bergantung pada ini |
+| `system_prompt.txt` | ✅ Kritis | Menentukan persona dan aturan tutor |
+| `chroma_db/` | ⚠️ Kritis tapi regenerable | Bisa dibuat ulang via 01_ingest.py |
+| `Model-gasing-rag.modelfile` | ⚠️ Kritis | Diperlukan untuk custom model |
+| `scripts/validation_report.json` | ℹ️ Output | Tidak kritis untuk operasi |
+| `_bmad/` | ℹ️ Tooling | Tidak mempengaruhi runtime |
+| `.venv/` | ℹ️ Derived | Bisa dibuat ulang via pip install |
+
+---
+
+## Alur Update Knowledge Base
+
+```
+Edit chunks/*.md
+      │
+      ▼
+python scripts/01_ingest.py    ← WAJIB
+      │
+      ▼
+python scripts/02_query.py "soal test"    ← Verifikasi retrieval
+      │
+      ▼
+python scripts/05_validate.py --quick     ← Cek tidak ada regresi
+      │
+      ▼
+git add chunks/ && git commit -m "Update chunk ..."
+git push
+```
