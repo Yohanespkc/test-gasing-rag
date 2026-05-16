@@ -1,0 +1,529 @@
+{
+  "version_modelfile_source": "v44",
+  "total_chunks": 22,
+  "shared": [
+    {
+      "id": "S01_konfigurasi_jari",
+      "kategori": "shared",
+      "topik": "penjumlahan",
+      "referensi_bagian_v44": "4.1, 4.2, 4.3, 4.4, 4.5",
+      "mode_tercakup": [
+        "belajar"
+      ],
+      "kompleksitas": "dasar",
+      "jenis_yang_pakai": [
+        "A1",
+        "A2",
+        "B1",
+        "B2",
+        "B3"
+      ],
+      "version_modelfile": "v44",
+      "file": "chunks/shared/S01_konfigurasi_jari.md",
+      "char_count": 1638
+    },
+    {
+      "id": "S02_komutativitas",
+      "kategori": "shared",
+      "topik": "penjumlahan",
+      "referensi_bagian_v44": "4.6",
+      "mode_tercakup": [
+        "belajar"
+      ],
+      "kompleksitas": "dasar",
+      "jenis_yang_pakai": [
+        "A1",
+        "A2",
+        "B1",
+        "B2",
+        "B3",
+        "C",
+        "D"
+      ],
+      "jenis_yang_tidak_pakai": [
+        "E",
+        "F"
+      ],
+      "version_modelfile": "v44",
+      "file": "chunks/shared/S02_komutativitas.md",
+      "char_count": 1667
+    },
+    {
+      "id": "S03_format_mencongak_universal",
+      "kategori": "shared",
+      "topik": "penjumlahan",
+      "referensi_bagian_v44": "4.7",
+      "mode_tercakup": [
+        "mencongak"
+      ],
+      "kompleksitas": "dasar",
+      "jenis_yang_pakai": [
+        "Nol",
+        "A1",
+        "A2",
+        "B1",
+        "B2",
+        "B3",
+        "C",
+        "D",
+        "E",
+        "F"
+      ],
+      "version_modelfile": "v44",
+      "file": "chunks/shared/S03_format_mencongak_universal.md",
+      "char_count": 1543
+    },
+    {
+      "id": "S04_format_dua_cara",
+      "kategori": "shared",
+      "topik": "penjumlahan",
+      "referensi_bagian_v44": "4.8",
+      "mode_tercakup": [
+        "belajar",
+        "mencongak"
+      ],
+      "kompleksitas": "menengah",
+      "jenis_yang_pakai": [
+        "D",
+        "E",
+        "F"
+      ],
+      "version_modelfile": "v44",
+      "file": "chunks/shared/S04_format_dua_cara.md",
+      "char_count": 1774
+    },
+    {
+      "id": "S05_aturan_1_kecil",
+      "kategori": "shared",
+      "topik": "penjumlahan",
+      "referensi_bagian_v44": "4.9",
+      "mode_tercakup": [
+        "belajar",
+        "mencongak"
+      ],
+      "kompleksitas": "tinggi",
+      "jenis_yang_pakai": [
+        "E",
+        "F"
+      ],
+      "version_modelfile": "v44",
+      "file": "chunks/shared/S05_aturan_1_kecil.md",
+      "char_count": 3915
+    }
+  ],
+  "per_jenis": [
+    {
+      "id": "J00_nol",
+      "kategori": "per_jenis",
+      "jenis_soal": "Nol",
+      "topik": "penjumlahan",
+      "operand_min_digit": 1,
+      "operand_max_digit": 4,
+      "mode_tercakup": [
+        "belajar",
+        "mencongak"
+      ],
+      "konsep_terkait": [
+        "S03_format_mencongak_universal"
+      ],
+      "kompleksitas": "dasar",
+      "punya_carry": false,
+      "punya_cascade_1_kecil": false,
+      "version_modelfile": "v44",
+      "referensi_bagian_v44": "5.0",
+      "file": "chunks/per_jenis/J00_nol.md",
+      "char_count": 3178
+    },
+    {
+      "id": "J10_a1",
+      "kategori": "per_jenis",
+      "jenis_soal": "A1",
+      "topik": "penjumlahan",
+      "operand_min_digit": 1,
+      "operand_max_digit": 1,
+      "hasil_min": 1,
+      "hasil_max": 5,
+      "mode_tercakup": [
+        "belajar",
+        "mencongak"
+      ],
+      "konsep_terkait": [
+        "S01_konfigurasi_jari",
+        "S02_komutativitas",
+        "S03_format_mencongak_universal"
+      ],
+      "kompleksitas": "dasar",
+      "punya_carry": false,
+      "punya_cascade_1_kecil": false,
+      "version_modelfile": "v44",
+      "referensi_bagian_v44": "5.1",
+      "file": "chunks/per_jenis/J10_a1.md",
+      "char_count": 3268
+    },
+    {
+      "id": "J20_a2",
+      "kategori": "per_jenis",
+      "jenis_soal": "A2",
+      "topik": "penjumlahan",
+      "operand_min_digit": 1,
+      "operand_max_digit": 1,
+      "hasil_min": 6,
+      "hasil_max": 10,
+      "mode_tercakup": [
+        "belajar",
+        "mencongak"
+      ],
+      "konsep_terkait": [
+        "S01_konfigurasi_jari",
+        "S02_komutativitas",
+        "S03_format_mencongak_universal"
+      ],
+      "kompleksitas": "dasar",
+      "punya_carry": false,
+      "punya_cascade_1_kecil": false,
+      "punya_pasangan_10": true,
+      "version_modelfile": "v44",
+      "referensi_bagian_v44": "5.2",
+      "file": "chunks/per_jenis/J20_a2.md",
+      "char_count": 3907
+    },
+    {
+      "id": "J30_b1",
+      "kategori": "per_jenis",
+      "jenis_soal": "B1",
+      "topik": "penjumlahan",
+      "operand_min_digit": 1,
+      "operand_max_digit": 2,
+      "pola": "10 + X (X = 1 sampai 9)",
+      "mode_tercakup": [
+        "belajar",
+        "mencongak"
+      ],
+      "konsep_terkait": [
+        "S01_konfigurasi_jari",
+        "S02_komutativitas",
+        "S03_format_mencongak_universal"
+      ],
+      "kompleksitas": "dasar",
+      "punya_carry": false,
+      "version_modelfile": "v44",
+      "referensi_bagian_v44": "5.3",
+      "file": "chunks/per_jenis/J30_b1.md",
+      "char_count": 1993
+    },
+    {
+      "id": "J40_b2",
+      "kategori": "per_jenis",
+      "jenis_soal": "B2",
+      "topik": "penjumlahan",
+      "operand_min_digit": 1,
+      "operand_max_digit": 2,
+      "pola": "X + 10 (X = 1 sampai 9)",
+      "mode_tercakup": [
+        "belajar",
+        "mencongak"
+      ],
+      "konsep_terkait": [
+        "S01_konfigurasi_jari",
+        "S02_komutativitas",
+        "S03_format_mencongak_universal"
+      ],
+      "kompleksitas": "dasar",
+      "punya_carry": false,
+      "version_modelfile": "v44",
+      "referensi_bagian_v44": "5.4",
+      "file": "chunks/per_jenis/J40_b2.md",
+      "char_count": 1687
+    },
+    {
+      "id": "J50_b3",
+      "kategori": "per_jenis",
+      "jenis_soal": "B3",
+      "topik": "penjumlahan",
+      "operand_min_digit": 1,
+      "operand_max_digit": 1,
+      "hasil_min": 11,
+      "hasil_max": 19,
+      "mode_tercakup": [
+        "belajar",
+        "mencongak"
+      ],
+      "konsep_terkait": [
+        "S01_konfigurasi_jari",
+        "S02_komutativitas",
+        "S03_format_mencongak_universal"
+      ],
+      "kompleksitas": "menengah",
+      "punya_carry": true,
+      "pakai_pasangan_10": true,
+      "version_modelfile": "v44",
+      "referensi_bagian_v44": "5.5",
+      "file": "chunks/per_jenis/J50_b3.md",
+      "char_count": 4328
+    },
+    {
+      "id": "J60_c",
+      "kategori": "per_jenis",
+      "jenis_soal": "C",
+      "topik": "penjumlahan",
+      "operand_min_digit": 1,
+      "operand_max_digit": 2,
+      "pola": "2 digit + 1 digit",
+      "mode_tercakup": [
+        "belajar",
+        "mencongak"
+      ],
+      "konsep_terkait": [
+        "S02_komutativitas",
+        "S03_format_mencongak_universal"
+      ],
+      "kompleksitas": "menengah",
+      "punya_carry": true,
+      "punya_cascade_1_kecil": false,
+      "version_modelfile": "v44",
+      "referensi_bagian_v44": "5.6",
+      "file": "chunks/per_jenis/J60_c.md",
+      "char_count": 2698
+    },
+    {
+      "id": "J70_d",
+      "kategori": "per_jenis",
+      "jenis_soal": "D",
+      "topik": "penjumlahan",
+      "operand_min_digit": 1,
+      "operand_max_digit": 2,
+      "pola": "maks 2 digit (2d+2d atau 1d+2d)",
+      "mode_tercakup": [
+        "belajar",
+        "mencongak"
+      ],
+      "konsep_terkait": [
+        "S02_komutativitas",
+        "S03_format_mencongak_universal",
+        "S04_format_dua_cara"
+      ],
+      "kompleksitas": "menengah",
+      "punya_carry": true,
+      "punya_cascade_1_kecil": false,
+      "sub_kasus": [
+        "D1: 2d+2d, satuan kurang dari 10",
+        "D2: 2d+2d, satuan lebih atau sama dengan 10",
+        "D3: 1d+2d, satuan kurang dari 10",
+        "D4: 1d+2d, satuan lebih atau sama dengan 10"
+      ],
+      "version_modelfile": "v44",
+      "referensi_bagian_v44": "5.7",
+      "file": "chunks/per_jenis/J70_d.md",
+      "char_count": 5460
+    },
+    {
+      "id": "J81_e_tanpa_carry",
+      "kategori": "per_jenis",
+      "jenis_soal": "E",
+      "sub_kategori": "tanpa_carry",
+      "topik": "penjumlahan",
+      "operand_min_digit": 1,
+      "operand_max_digit": 3,
+      "ada_operand_3_digit": true,
+      "mode_tercakup": [
+        "belajar",
+        "mencongak"
+      ],
+      "konsep_terkait": [
+        "S03_format_mencongak_universal",
+        "S04_format_dua_cara"
+      ],
+      "kompleksitas": "tinggi",
+      "punya_carry": false,
+      "punya_cascade_1_kecil": false,
+      "version_modelfile": "v44",
+      "referensi_bagian_v44": "5.8 (sub: tanpa carry)",
+      "file": "chunks/per_jenis/J81_e_tanpa_carry.md",
+      "char_count": 2004
+    },
+    {
+      "id": "J82_e_carry_satuan_puluhan",
+      "kategori": "per_jenis",
+      "jenis_soal": "E",
+      "sub_kategori": "carry_satuan_atau_puluhan",
+      "topik": "penjumlahan",
+      "operand_min_digit": 1,
+      "operand_max_digit": 3,
+      "ada_operand_3_digit": true,
+      "mode_tercakup": [
+        "belajar",
+        "mencongak"
+      ],
+      "konsep_terkait": [
+        "S03_format_mencongak_universal",
+        "S04_format_dua_cara",
+        "S05_aturan_1_kecil"
+      ],
+      "kompleksitas": "tinggi",
+      "punya_carry": true,
+      "punya_cascade_1_kecil": false,
+      "version_modelfile": "v44",
+      "referensi_bagian_v44": "5.8 (sub: carry satuan/puluhan)",
+      "file": "chunks/per_jenis/J82_e_carry_satuan_puluhan.md",
+      "char_count": 3135
+    },
+    {
+      "id": "J83_e_cascade_1_kecil",
+      "kategori": "per_jenis",
+      "jenis_soal": "E",
+      "sub_kategori": "cascade_1_kecil",
+      "topik": "penjumlahan",
+      "operand_min_digit": 1,
+      "operand_max_digit": 3,
+      "ada_operand_3_digit": true,
+      "mode_tercakup": [
+        "belajar",
+        "mencongak"
+      ],
+      "konsep_terkait": [
+        "S03_format_mencongak_universal",
+        "S04_format_dua_cara",
+        "S05_aturan_1_kecil"
+      ],
+      "kompleksitas": "tinggi",
+      "punya_carry": true,
+      "punya_cascade_1_kecil": true,
+      "beda_panjang_digit": true,
+      "version_modelfile": "v44",
+      "referensi_bagian_v44": "5.8 (sub: cascade dan diff digits)",
+      "file": "chunks/per_jenis/J83_e_cascade_1_kecil.md",
+      "char_count": 4074
+    },
+    {
+      "id": "J91_f_pengantar_aturan",
+      "kategori": "per_jenis",
+      "jenis_soal": "F",
+      "sub_kategori": "pengantar",
+      "topik": "penjumlahan",
+      "operand_min_digit": 1,
+      "operand_max_digit": 99,
+      "ada_operand_4_digit_atau_lebih": true,
+      "mode_tercakup": [
+        "belajar",
+        "mencongak"
+      ],
+      "konsep_terkait": [
+        "S03_format_mencongak_universal",
+        "S04_format_dua_cara",
+        "S05_aturan_1_kecil"
+      ],
+      "kompleksitas": "sangat_tinggi",
+      "version_modelfile": "v44",
+      "referensi_bagian_v44": "5.9 (pengantar dan aturan wajib)",
+      "file": "chunks/per_jenis/J91_f_pengantar_aturan.md",
+      "char_count": 2969
+    },
+    {
+      "id": "J92_f_alignment_digit",
+      "kategori": "per_jenis",
+      "jenis_soal": "F",
+      "sub_kategori": "alignment",
+      "topik": "penjumlahan",
+      "mode_tercakup": [
+        "belajar",
+        "mencongak"
+      ],
+      "konsep_terkait": [
+        "S05_aturan_1_kecil"
+      ],
+      "kompleksitas": "sangat_tinggi",
+      "beda_panjang_digit": true,
+      "version_modelfile": "v44",
+      "referensi_bagian_v44": "5.9 (aturan alignment digit)",
+      "file": "chunks/per_jenis/J92_f_alignment_digit.md",
+      "char_count": 2229
+    },
+    {
+      "id": "J93_f_belajar_simple",
+      "kategori": "per_jenis",
+      "jenis_soal": "F",
+      "sub_kategori": "belajar_simple",
+      "topik": "penjumlahan",
+      "mode_tercakup": [
+        "belajar"
+      ],
+      "konsep_terkait": [
+        "S04_format_dua_cara",
+        "S05_aturan_1_kecil"
+      ],
+      "kompleksitas": "tinggi",
+      "punya_carry": true,
+      "punya_cascade_1_kecil": true,
+      "version_modelfile": "v44",
+      "referensi_bagian_v44": "5.9 contoh F-1 s.d. F-3",
+      "file": "chunks/per_jenis/J93_f_belajar_simple.md",
+      "char_count": 1967
+    },
+    {
+      "id": "J94_f_belajar_cascade",
+      "kategori": "per_jenis",
+      "jenis_soal": "F",
+      "sub_kategori": "belajar_cascade_kompleks",
+      "topik": "penjumlahan",
+      "mode_tercakup": [
+        "belajar"
+      ],
+      "konsep_terkait": [
+        "S05_aturan_1_kecil"
+      ],
+      "kompleksitas": "sangat_tinggi",
+      "punya_carry": true,
+      "punya_cascade_1_kecil": true,
+      "beberapa_kelompok_1_kecil": true,
+      "version_modelfile": "v44",
+      "referensi_bagian_v44": "5.9 contoh F-4 s.d. F-8",
+      "file": "chunks/per_jenis/J94_f_belajar_cascade.md",
+      "char_count": 3333
+    },
+    {
+      "id": "J95_f_belajar_diff_digits",
+      "kategori": "per_jenis",
+      "jenis_soal": "F",
+      "sub_kategori": "belajar_diff_digits",
+      "topik": "penjumlahan",
+      "mode_tercakup": [
+        "belajar"
+      ],
+      "konsep_terkait": [
+        "J92_f_alignment_digit",
+        "S05_aturan_1_kecil"
+      ],
+      "kompleksitas": "sangat_tinggi",
+      "punya_carry": true,
+      "punya_cascade_1_kecil": true,
+      "beda_panjang_digit": true,
+      "banyak_1_kecil": true,
+      "version_modelfile": "v44",
+      "referensi_bagian_v44": "5.9 contoh F-9 s.d. F-12",
+      "file": "chunks/per_jenis/J95_f_belajar_diff_digits.md",
+      "char_count": 4594
+    },
+    {
+      "id": "J96_f_mencongak",
+      "kategori": "per_jenis",
+      "jenis_soal": "F",
+      "sub_kategori": "mencongak",
+      "topik": "penjumlahan",
+      "mode_tercakup": [
+        "mencongak"
+      ],
+      "konsep_terkait": [
+        "S03_format_mencongak_universal",
+        "S05_aturan_1_kecil",
+        "J92_f_alignment_digit"
+      ],
+      "kompleksitas": "sangat_tinggi",
+      "punya_carry": true,
+      "punya_cascade_1_kecil": true,
+      "version_modelfile": "v44",
+      "referensi_bagian_v44": "5.9 contoh F-13 s.d. F-23",
+      "file": "chunks/per_jenis/J96_f_mencongak.md",
+      "char_count": 8722
+    }
+  ]
+}

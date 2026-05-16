@@ -1,0 +1,1018 @@
+======================================================================
+Case: Nol-01
+Query: B: berapa 7 + 0
+Expected answer: 7
+Math pass: True
+Math actual: 7
+Format pass: True
+Format issues: []
+
+Gemma response:
+Mantap! Kita akan belajar matematika sekarang.
+
+Untuk soal 7 + 0, konsep yang kita pakai adalah tentang "nol", artinya tidak ada jumlah.
+
+0 artinya tidak ada jumlah.
+Sesuatu ditambah tidak ada hasilnya tidak berubah.
+Jadi 7 + 0 = 7.
+
+Misalnya kamu punya 7 apel di tangan, temanmu melihat kamu dan berkata, "Aku mau tambah 0 apel (tidak ada apel) ya." Berapa jumlah apel di tanganmu? Tentu jumlah apel kamu tetap 7, karena tidak ada yang ditambahkan. Jadi 7 + 0 = 7.
+
+======================================================================
+Case: Nol-02
+Query: B: berapa 0 + 8
+Expected answer: 8
+Math pass: True
+Math actual: 8
+Format pass: True
+Format issues: []
+
+Gemma response:
+Wah pintar sekali kamu menanyakan ini.
+
+Untuk soal 0 + 8, kita masuk ke jenis khusus yang disebut Jenis Nol, karena salah satu operandnya adalah 0. Konsep 0 ini sangat penting, dan hasilnya selalu tidak mengubah angka di sebelahnya.
+
+0 artinya tidak ada jumlah.
+Bayangkan meja kosong, tidak ada apel sama sekali. Lalu ibu taruh 8 apel di meja. Berapa apel di meja sekarang? Tentu 8, karena yang ada hanya apel dari ibu.
+
+Jadi 0 + 8 = 8.
+
+Memahami konsep nol ini sama seperti tahu bahwa menambah dengan "tidak ada apa-apa" hasilnya pasti tetap sama!
+
+======================================================================
+Case: Nol-03
+Query: B: berapa 25 + 0
+Expected answer: 25
+Math pass: True
+Math actual: 25
+Format pass: True
+Format issues: []
+
+Gemma response:
+Hai, kamu hebat sekali sudah mau belajar matematika!
+
+Jenis soal 25 + 0 ini termasuk dalam Jenis Nol, karena salah satu angkanya adalah 0. Prinsip dasarnya adalah: 0 artinya tidak ada jumlah. Artinya, berapapun angka yang kamu miliki, ditambah dengan tidak ada jumlah (0), maka jumlahmu tidak akan berubah.
+
+0 artinya tidak ada jumlah.
+Sesuatu ditambah tidak ada hasilnya tidak berubah.
+Jadi 25 + 0 = 25.
+
+Misalnya kamu punya 25 kelereng di dalam kotak. Teman kamu bilang, "aku tambah 0 kelereng ya". Berapa kelereng di kotak sekarang? Tentu tetap 25, karena tidak ada yang ditambahkan.
+
+Jadi 25 + 0 = 25.
+
+======================================================================
+Case: Nol-04
+Query: C: berapa 0 + 0
+Expected answer: 0
+Math pass: False
+Math actual: None
+Format pass: True
+Format issues: []
+
+Gemma response:
+0 + 0?
+Jawab 0.
+Alasan 0 berarti tidak ada jumlah. Tidak ada apel ditambah tidak ada apel hasilnya tentu tidak ada apel juga.
+
+======================================================================
+Case: A1-01
+Query: B: berapa 1 + 1
+Expected answer: 2
+Math pass: True
+Math actual: 2
+Format pass: True
+Format issues: []
+
+Gemma response:
+Hai, kamu hebat sekali sudah mau belajar matematika. Kita akan hitung 1 + 1 ini pakai cara GASING.
+
+Tunjukkan 1 jari (kelingking kanan). Tanya "ini berapa?".
+Betul, ini satu. Tunjukkan 1 jari (manis kanan, lanjut).
+Tanya "ini berapa?".
+Betul, ini satu. Tanya "kalau digabung hasilnya berapa?".
+Betul, ini dua, karena ia lihat bentuk jarinya.
+
+Tulis 1 + 1 = 2.
+
+Jumlah 2 juga bisa diperoleh dari penjumlahan berikut ini:
+
+Kita mulai dengan menunjukkan 2 jari tangan kanan. Tanya "ini berapa?".
+Betul, ini dua. Simpulkan "jadi dua adalah satu dan satu".
+
+Dan lihat ya, 1 + 1 hasilnya 2, dan kalau dibalik, 1 + 1 juga hasilnya 2.
+
+======================================================================
+Case: A1-02
+Query: B: berapa 2 + 3
+Expected answer: 5
+Math pass: True
+Math actual: 5
+Format pass: True
+Format issues: []
+
+Gemma response:
+Wah, pintar sekali kamu menanyakan ini. Kita akan hitung 2 + 3 ini pakai cara GASING.
+
+Tunjukkan 2 jari (kelingking, manis kanan). Tanya "ini berapa?".
+Betul, ini dua. Tunjukkan 3 jari (tengah, telunjuk, jempol kanan).
+Tanya "ini berapa?". Betul, ini tiga. Tanya "kalau digabung hasilnya berapa?". Betul, ini lima, karena ia lihat bentuk jarinya.
+
+Tulis 2 + 3 = 5.
+
+Jumlah 5 juga bisa diperoleh dari penjumlahan berikut ini:
+
+Kita mulai dengan menunjukkan 5 jari tangan kanan. Tanya "ini berapa?".
+Betul, ini lima.
+
+Tunjukkan 4 jari (kelingking, manis, tengah, telunjuk kanan). Tanya "ini berapa?".
+Betul, ini empat. Tunjukkan 1 jari (jempol kanan).
+Tanya "ini berapa?". Betul, ini satu. Gabungkan, tanya "kalau digabung hasilnya berapa?".
+Betul, ini lima. Simpulkan "jadi lima adalah empat dan satu".
+
+Tunjukkan 3 jari (kelingking, manis, tengah kanan). Tanya "ini berapa?".
+Betul, ini tiga. Tunjukkan 2 jari (telunjuk, jempol kanan). Tanya "ini berapa?".
+Betul, ini dua. Gabungkan, tanya "kalau digabung hasilnya berapa?".
+Betul, ini lima. Simpulkan "jadi lima adalah tiga dan dua".
+
+Lihat kan, 5 itu terbentuk dari 4 dan 1, juga dari 3 dan 2.
+
+Dan lihat ya, 2 + 3 hasilnya 5, dan kalau dibalik, 3 + 2 juga hasilnya 5.
+
+======================================================================
+Case: A1-03
+Query: B: berapa 3 + 1
+Expected answer: 4
+Math pass: True
+Math actual: 4
+Format pass: True
+Format issues: []
+
+Gemma response:
+Wah pintar sekali kamu menanyakan ini. Kita akan hitung 3 + 1 ini pakai cara GASING.
+
+Tunjukkan 3 jari (kelingking, manis, tengah kanan). Tanya "ini berapa?".
+Betul, ini tiga. Tunjukkan 1 jari (telunjuk kanan).
+Tanya "ini berapa?".
+Betul, ini satu. Tanya "kalau digabung hasilnya berapa?".
+Betul, ini empat, karena ia lihat bentuk jarinya.
+
+Tulis 3 + 1 = 4.
+
+Jumlah 4 juga bisa diperoleh dari penjumlahan berikut ini:
+
+Kita mulai dengan menunjukkan 4 jari tangan kanan. Tanya "ini berapa?".
+Betul, ini empat.
+
+Tunjukkan 3 jari (kelingking, manis, tengah kanan). Tanya "ini berapa?".
+Betul, ini tiga. Tunjukkan 1 jari (telunjuk kanan).
+Tanya "ini berapa?".
+Betul, ini satu. Gabungkan, tanya "kalau digabung hasilnya berapa?".
+Betul, ini empat. Simpulkan "jadi empat adalah tiga dan satu".
+
+Tunjukkan 2 jari (kelingking, manis kanan). Tanya "ini berapa?".
+Betul, ini dua. Tunjukkan 2 jari (tengah, telunjuk kanan). Tanya "ini berapa?".
+Betul, ini dua. Gabungkan, tanya "kalau digabung hasilnya berapa?".
+Betul, ini empat. Simpulkan "jadi empat adalah dua dan dua".
+
+Lihat kan, 4 itu terbentuk dari 3 dan 1, juga dari 2 dan 2.
+
+Dan lihat ya, 3 + 1 hasilnya 4, dan kalau dibalik, 1 + 3 juga hasilnya 4.
+
+======================================================================
+Case: A1-04
+Query: C: berapa 2 + 2
+Expected answer: 4
+Math pass: True
+Math actual: 4
+Format pass: True
+Format issues: []
+
+Gemma response:
+2 + 2?
+Jawab: 2 + 2 = 4
+Alasan: kita lihat bentuk jarinya, 2 jari ditambah 2 jari hasilnya 4 jari.
+
+======================================================================
+Case: A2-01
+Query: B: berapa 4 + 5
+Expected answer: 9
+Math pass: True
+Math actual: 9
+Format pass: True
+Format issues: []
+
+Gemma response:
+Wah pintar sekali kamu menanyakan ini. Kita akan hitung 4 + 5 ini pakai cara GASING.
+
+Tunjukkan 4 jari (kelingking, manis, tengah, telunjuk kanan). Tanya "ini berapa?".
+Betul, ini empat. Tunjukkan 5 jari (jempol kanan + jempol, telunjuk, tengah, manis kiri).
+Tanya "ini berapa?". Betul, ini lima. Tanya "kalau digabung hasilnya berapa?". Betul, ini sembilan, karena ia lihat bentuk jarinya.
+
+Tulis 4 + 5 = 9.
+
+Jumlah 9 juga bisa diperoleh dari penjumlahan berikut ini:
+
+Kita mulai dengan menunjukkan 9 jari (5 kanan + jempol, telunjuk, tengah, manis kiri). Tanya "ini berapa?".
+Betul, ini sembilan.
+
+Tunjukkan 8 jari (5 kanan + jempol, telunjuk, tengah kiri). Tanya "ini berapa?".
+Betul, ini delapan. Tunjukkan 1 jari (manis kiri).
+Tanya "ini berapa?".
+Betul, ini satu. Gabungkan, tanya "kalau digabung hasilnya berapa?".
+Betul, ini sembilan. Simpulkan "jadi sembilan adalah delapan dan satu".
+
+Tunjukkan 7 jari (5 kanan + jempol, telunjuk kiri). Tanya "ini berapa?".
+Betul, ini tujuh. Tunjukkan 2 jari (tengah, manis kiri). Tanya "ini berapa?".
+Betul, ini dua. Gabungkan, tanya "kalau digabung hasilnya berapa?".
+Betul, ini sembilan. Simpulkan "jadi sembilan adalah tujuh dan dua".
+
+Tunjukkan 6 jari (5 kanan + jempol, telunjuk, tengah kanan). Tanya "ini berapa?".
+Betul, ini enam. Tunjukkan 3 jari (tengah, manis, kelingking kiri). Tanya "ini berapa?".
+Betul, ini tiga. Gabungkan, tanya "kalau digabung hasilnya berapa?".
+Betul, ini sembilan. Simpulkan "jadi sembilan adalah enam dan tiga".
+
+Tunjukkan 5 jari (5 kanan). Tanya "ini berapa?".
+Betul, ini lima. Tunjukkan 4 jari (kelingking, manis, tengah, telunjuk kiri). Tanya "ini berapa?".
+Betul, ini empat. Gabungkan, tanya "kalau digabung hasilnya berapa?".
+Betul, ini sembilan. Simpulkan "jadi sembilan adalah lima dan empat".
+
+Dan lihat ya, 4 + 5 hasilnya 9, dan kalau dibalik, 5 + 4 juga hasilnya 9.
+
+======================================================================
+Case: A2-02
+Query: B: berapa 6 + 3
+Expected answer: 9
+Math pass: True
+Math actual: 9
+Format pass: True
+Format issues: []
+
+Gemma response:
+Wah keren pertanyaannya. Kita akan hitung 6 + 3 pakai cara GASING.
+
+Tunjukkan 6 jari (lima kanan ditambah jempol, telunjuk kiri). Tanya "ini berapa?". Betul, ini enam. Tunjukkan 3 jari (tengah, manis, kelingking kanan). Tanya "ini berapa?". Betul, ini tiga. Tanya "kalau digabung hasilnya berapa?". Betul, ini sembilan, karena ia lihat bentuk jarinya.
+
+Tulis 6 + 3 = 9.
+
+Jumlah 9 juga bisa diperoleh dari penjumlahan berikut ini:
+
+Kita mulai dengan menunjukkan 9 jari (lima kanan ditambah jempol, telunjuk, tengah, manis kiri). Tanya "ini berapa?". Betul, ini sembilan.
+
+Tunjukkan 5 jari (lima kanan). Tanya "ini berapa?". Betul, ini lima. Tunjukkan 4 jari (manis, tengah, telunjuk, kelingking kanan). Tanya "ini berapa?". Betul, ini empat. Gabungkan, tanya "kalau digabung hasilnya berapa?". Betul, ini sembilan, karena ia lihat bentuk jarinya.
+
+[Lanjutkan enumerasi: 4+3, 3+2, 2+1.]
+
+Lihat kan, 9 itu terbentuk dari 8 dan 1, dari 7 dan 2, dari 6 dan 3,
+juga dari 5 dan 4.
+
+Dan lihat ya, 6 + 3 hasilnya 9, dan kalau dibalik, 3 + 6 juga
+hasilnya 9.
+
+======================================================================
+Case: A2-03
+Query: B: berapa 7 + 3
+Expected answer: 10
+Math pass: True
+Math actual: 10
+Format pass: True
+Format issues: []
+
+Gemma response:
+Wah keren pertanyaannya. Kita akan hitung 7 + 3 pakai cara GASING.
+
+Tunjukkan 7 jari (lima kanan + jempol, telunjuk kiri). Tanya "ini berapa?". Betul, ini tujuh. Tunjukkan 3 jari (tengah, manis, kelingking kiri). Tanya "ini berapa?". Betul, ini tiga. Tanya "kalau digabung hasilnya berapa?". Betul, ini sepuluh, karena ia lihat bentuk jarinya.
+
+Tulis 7 + 3 = 10.
+
+Jumlah 10 juga bisa diperoleh dari penjumlahan berikut ini:
+Kita mulai dengan menunjukkan 9 jari (lima kanan + jempol, telunjuk, tengah, manis kiri). Tanya "ini berapa?". Betul, ini sembilan. Tunjukkan 1 jari (manis kiri). Tanya "ini berapa?". Betul, ini satu. Gabungkan, tanya "kalau digabung hasilnya berapa?". Betul, ini sepuluh.
+
+Tunjukkan 8 jari (lima kanan + jempol, telunjuk, tengah kiri). Tanya "ini berapa?". Betul, ini delapan. Tunjukkan 2 jari (tengah, manis kiri). Tanya "ini berapa?". Betul, ini dua. Gabungkan, tanya "kalau digabung hasilnya berapa?". Betul, ini sepuluh.
+
+Tunjukkan 7 jari (lima kanan + jempol, telunjuk kiri). Tanya "ini berapa?". Betul, ini tujuh. Tunjukkan 3 jari (tengah, manis, kelingking kiri). Tanya "ini berapa?". Betul, ini tiga. Gabungkan, tanya "kalau digabung hasilnya berapa?". Betul, ini sepuluh.
+
+Tunjukkan 6 jari (lima kanan + jempol, telunjuk, tengah kanan). Tanya "ini berapa?". Betul, ini enam. Tunjukkan 4 jari (kelingking, manis, tengah, telunjuk kanan). Tanya "ini berapa?". Betul, ini empat. Gabungkan, tanya "kalau digabung hasilnya berapa?". Betul, ini sepuluh.
+
+Tunjukkan 5 jari (lima kanan). Tanya "ini berapa?". Betul, ini lima. Tunjukkan 5 jari (lima kiri). Tanya "ini berapa?". Betul, ini lima. Gabungkan, tanya "kalau digabung hasilnya berapa?". Betul, ini sepuluh.
+
+Lihat kan, 10 itu terbentuk dari 9 dan 1, dari 8 dan 2, dari 7 dan 3, juga dari 6 dan 4, sampai 5 dan 5.
+
+Pasangan bilangan yang jumlahnya 10 ini disebut pasangan 10. Pasangan ini istimewa karena dua bilangan yang hurufnya sama mempunyai jumlah 10. Satu Sembilan, sama-sama mulai dengan huruf S. Dua Delapan, sama-sama D. Tiga Tujuh, sama-sama T. Empat Enam, sama-sama E. Lima Lima, sama-sama L. Semuanya pasangan 10. Mudah sekali diingat.
+
+Dan lihat ya, 7 + 3 hasilnya 10, dan kalau dibalik, 3 + 7 juga hasilnya 10.
+
+======================================================================
+Case: A2-04
+Query: C: berapa 5 + 5
+Expected answer: 10
+Math pass: True
+Math actual: 10
+Format pass: True
+Format issues: []
+
+Gemma response:
+Mantap! Yuk kita hitung.
+
+5 + 5?
+Jawab: 5 + 5 = 10
+Alasan: kita lihat bentuk jarinya, 5 jari ditambah 5 jari hasilnya
+10 jari.
+
+======================================================================
+Case: B1-01
+Query: B: berapa 10 + 1
+Expected answer: 11
+Math pass: True
+Math actual: 11
+Format pass: True
+Format issues: []
+
+Gemma response:
+Hai, kamu hebat sekali sudah mau belajar matematika! Kita akan hitung 10 + 1 ini pakai cara GASING.
+
+Pertama, kita lihat angka 10. Kita tunjukkan semua jari, 5 jari di tangan kanan dan 5 jari di tangan kiri. Tanya "ini berapa?". Betul, ini sepuluh.
+
+Sekarang, kita masukkan 10 ini ke kepala. Tutup mata sebentar, bayangkan 10 ada di kepala. Buka mata, tangan kosong.
+
+Selanjutnya, kita lihat angka 1. Kita tunjukkan 1 jari (kelingking kanan). Tanya "ini berapa?". Betul, ini satu.
+
+Sekarang kita dekatkan 1 ke kepala. Di kepala ada 10, di tangan ada 1. Kalau dijumlah, 10 dan 1 adalah 11.
+
+Tulis 10 + 1 = 11.
+
+Dan lihat ya, 10 + 1 hasilnya 11, dan kalau dibalik, 1 + 10 juga hasilnya 11.
+
+======================================================================
+Case: B1-02
+Query: B: berapa 10 + 5
+Expected answer: 15
+Math pass: True
+Math actual: 15
+Format pass: True
+Format issues: []
+
+Gemma response:
+Wah keren pertanyaannya. Kita akan hitung 10 + 5 ini pakai cara GASING.
+
+Pertama, kita lihat angka 10. Kita tunjukkan semua jari, 5 jari di tangan kanan dan 5 jari di tangan kiri. Kita tanya "ini berapa?". Betul, ini sepuluh.
+
+Sekarang, kita masukkan 10 ini ke kepala. Tutup mata sebentar, bayangkan 10 ada di kepala. Buka mata, tangan kosong.
+
+Selanjutnya, kita lihat angka 5. Kita tunjukkan 5 jari (jempol kanan, telunjuk kanan, tengah kanan, manis kanan, kelingking kanan). Kita tanya "ini berapa?". Betul, ini lima.
+
+Sekarang kita dekatkan 5 ke kepala. Di kepala ada 10, di tangan ada 5. Kalau dijumlah, 10 dan 5 adalah 15.
+
+Tulis 10 + 5 = 15.
+
+Jadi, 10 ditambah 5 hasilnya 15. Dan lihat ya, 10 + 5 hasilnya 15, dan kalau dibalik, 5 + 10 juga hasilnya 15.
+
+======================================================================
+Case: B1-03
+Query: B: berapa 10 + 9
+Expected answer: 19
+Math pass: True
+Math actual: 19
+Format pass: True
+Format issues: []
+
+Gemma response:
+Wah pintar sekali kamu menanyakan ini. Kita akan belajar matematika sekarang!
+
+Kita akan hitung 10 + 9 ini pakai cara GASING.
+
+Pertama, kita lihat angka 10. Kita tunjukkan semua jari, 5 jari di tangan kanan dan 5 jari di tangan kiri. Tanya "ini berapa?". Betul, ini sepuluh.
+
+Sekarang, kita masukkan 10 ini ke kepala. Tutup mata sebentar, bayangkan 10 ada di kepala. Buka mata, tangan kosong.
+
+Selanjutnya, kita lihat angka 9. Kita tunjukkan 9 jari (5 jari kanan dan 4 jari kiri). Tanya "ini berapa?". Betul, ini sembilan.
+
+Sekarang kita dekatkan 9 ke kepala. Di kepala ada 10, di tangan ada 9. Kalau dijumlah, 10 dan 9 adalah 19.
+
+Tulis 10 + 9 = 19.
+
+Dan lihat ya, 10 + 9 hasilnya 19, dan kalau dibalik, 9 + 10 juga hasilnya 19.
+
+======================================================================
+Case: B1-04
+Query: C: berapa 10 + 3
+Expected answer: 13
+Math pass: True
+Math actual: 13
+Format pass: True
+Format issues: []
+
+Gemma response:
+10 + 3?
+Jawab 10 + 3 = 13
+Alasan: 10 di kepala, 3 di tangan, 10 dan 3 adalah 13.
+
+======================================================================
+Case: B2-01
+Query: B: berapa 7 + 10
+Expected answer: 17
+Math pass: True
+Math actual: 17
+Format pass: True
+Format issues: []
+
+Gemma response:
+Wah pintar sekali kamu menanyakan ini. Kita akan hitung 7 + 10 pakai cara GASING.
+
+Karena 7 + 10 sama dengan 10 + 7 (kalau dibalik hasilnya sama), kita pakai cara yang lebih mudah: taruh 10 di kepala.
+
+Kita tunjukkan semua jari, 5 kanan dan 5 kiri. Tanya "ini berapa?".
+Betul, ini sepuluh. Masukkan 10 ke kepala. Tutup mata sebentar,
+bayangkan 10 ada di kepala. Buka mata, tangan kosong.
+
+Sekarang tunjukkan 7 jari (5 kanan + jempol, telunjuk kiri). Tanya
+"ini berapa?". Betul, ini tujuh.
+
+Dekatkan 7 ke kepala. Di kepala ada 10, di tangan ada 7. Kalau
+dijumlah, 10 dan 7 adalah 17.
+
+Tulis 7 + 10 = 17.
+
+Dan lihat ya, 7 + 10 hasilnya 17, dan kalau dibalik, 10 + 7 juga
+hasilnya 17.
+
+======================================================================
+Case: B2-02
+Query: B: berapa 4 + 10
+Expected answer: 14
+Math pass: True
+Math actual: 14
+Format pass: True
+Format issues: []
+
+Gemma response:
+Mantap! Kita akan belajar matematika sekarang.
+
+Kita akan hitung 4 + 10 pakai cara GASING.
+
+Karena 4 + 10 sama dengan 10 + 4 (kalau dibalik hasilnya sama), kita pakai cara yang lebih mudah: taruh 10 di kepala.
+
+Kita tunjukkan semua jari, 5 kanan dan 5 kiri. Tanya "ini berapa?". Betul, ini sepuluh. Masukkan 10 ke kepala. Tutup mata sebentar, bayangkan 10 ada di kepala. Buka mata, tangan kosong.
+
+Sekarang tunjukkan 4 jari (kelingking kanan, manis kanan, tengah kanan, telunjuk kanan). Tanya "ini berapa?". Betul, ini empat.
+
+Dekatkan 4 ke kepala. Di kepala ada 10, di tangan ada 4. Kalau dijumlah, 10 dan 4 adalah 14.
+
+Tulis 4 + 10 = 14.
+
+Dan lihat ya, 4 + 10 hasilnya 14, dan kalau dibalik, 10 + 4 juga hasilnya 14.
+
+======================================================================
+Case: B2-03
+Query: B: berapa 9 + 10
+Expected answer: 19
+Math pass: True
+Math actual: 19
+Format pass: True
+Format issues: []
+
+Gemma response:
+Wah pintar sekali kamu menanyakan ini. Kita akan belajar matematika sekarang!
+
+Soal kita adalah 9 + 10. Karena 9 + 10 sama dengan 10 + 9 (kalau dibalik hasilnya sama), kita akan pakai cara yang lebih mudah, yaitu menaruh 10 di kepala.
+
+Pertama, kita tunjukkan semua jari, 5 kanan dan 5 kiri. Tanya "ini berapa?". Betul, ini sepuluh. Kita masukkan 10 ke kepala. Tutup mata sebentar, bayangkan 10 ada di kepala. Buka mata, tangan kosong.
+
+Sekarang, tunjukkan 9 jari (5 kanan + jempol, telunjuk, tengah, manis kiri). Tanya "ini berapa?". Betul, ini sembilan.
+
+Dekatkan 9 ke kepala. Di kepala ada 10, di tangan ada 9. Kalau dijumlah, 10 dan 9 adalah 19.
+
+Jadi, 9 + 10 = 19.
+
+Kita lihat ya, 9 + 10 hasilnya 19, dan kalau dibalik, 10 + 9 juga hasilnya 19.
+
+======================================================================
+Case: B2-04
+Query: C: berapa 6 + 10
+Expected answer: 16
+Math pass: True
+Math actual: 16
+Format pass: False
+Format issues: ['unexpected_komutativitas']
+
+Gemma response:
+Berapa 6 + 10?
+Jawab: 6 + 10 = 16
+Alasan: 6 + 10 sama dengan 10 + 6 (kalau dibalik hasilnya sama), 10 di kepala, 6 di tangan, jadi 16.
+
+======================================================================
+Case: B3-01
+Query: B: berapa 9 + 5
+Expected answer: 14
+Math pass: True
+Math actual: 14
+Format pass: True
+Format issues: []
+
+Gemma response:
+Hai, kamu hebat sekali sudah mau belajar matematika! Kita akan hitung 9 + 5 ini pakai cara GASING.
+
+Pertama, kita lihat angka 9. Tunjukkan 9 jari (5 kanan + jempol, telunjuk, tengah, manis kiri). Tanya "ini berapa?". Betul, ini sembilan.
+
+Sekarang masukkan 9 ke kepala. Tutup mata sebentar, bayangkan 9 ada di kepala. Buka mata, tangan kosong.
+
+Selanjutnya, kita lihat angka 5. Tunjukkan 5 jari (5 kanan, mulai dari kelingking). Tanya "ini berapa?". Betul, ini lima.
+
+Pasangan 9 supaya 10 adalah 1. Jadi kita pindahkan 1 jari dari 5 ke kepala. Tekuk jempol kanan, pindahkan ke kepala. Sisanya berapa?
+Betul, ini empat (kelingking, manis, tengah, telunjuk kanan).
+
+Sekarang di kepala ada 10, di tangan ada 4. Kalau dijumlah, 10 dan 4 adalah 14.
+
+Tulis 9 + 5 = 14.
+
+Dan lihat ya, 9 + 5 hasilnya 14, dan kalau dibalik, 5 + 9 juga hasilnya 14.
+
+======================================================================
+Case: B3-02
+Query: B: berapa 8 + 7
+Expected answer: 15
+Math pass: True
+Math actual: 15
+Format pass: False
+Format issues: ['missing_pasangan_10']
+
+Gemma response:
+Wah pintar sekali kamu menanyakan ini. Kita akan hitung 8 + 7 ini pakai cara GASING.
+
+Pertama, kita lihat angka 8. Tunjukkan 8 jari (5 kanan + jempol, telunjuk, tengah kiri). Tanya "ini berapa?". Betul, ini delapan. Sekarang kita masukkan 8 ke kepala. Tutup mata sebentar, bayangkan 8 ada di kepala. Buka mata, tangan kosong.
+
+Selanjutnya, kita lihat angka 7. Tunjukkan 7 jari (5 kanan + jempol, telunjuk kiri). Tanya "ini berapa?". Betul, ini tujuh.
+
+Ingat ya, supaya 8 jadi 10, kita butuh 2. Jadi kita pindahkan 2 jari dari 7 ke kepala. Tekuk jempol kanan dulu, pindahkan ke kepala. Lalu tekuk telunjuk kanan, pindahkan ke kepala. Sisanya berapa? Betul, ini lima (kelingking, manis, tengah, dan yang tersisa di tangan).
+
+Sekarang di kepala ada 10, di tangan ada 5. Kalau dijumlah, 10 dan 5 adalah 15.
+
+Tulis 8 + 7 = 15.
+
+Dan lihat ya, 8 + 7 hasilnya 15, dan kalau dibalik, 7 + 8 juga hasilnya 15.
+
+======================================================================
+Case: B3-03
+Query: B: berapa 5 + 9
+Expected answer: 14
+Math pass: True
+Math actual: 14
+Format pass: True
+Format issues: []
+
+Gemma response:
+Mantaaaap! Yuk kita pelajari 5 + 9 pakai cara GASING.
+
+Karena 5 lebih kecil dari 9, kita balik dulu: 5 + 9 sama dengan 9 + 5 (kalau dibalik hasilnya sama). Yang lebih besar masuk kepala.
+
+Pertama, kita lihat angka 9. Tunjukkan 9 jari (5 kanan + jempol, telunjuk, tengah, manis kiri). Tanya "ini berapa?". Betul, ini sembilan.
+
+Sekarang masukkan 9 ke kepala. Tutup mata sebentar, bayangkan 9 ada di kepala. Buka mata, tangan kosong.
+
+Selanjutnya, kita lihat angka 5. Tunjukkan 5 jari (5 kanan, mulai dari kelingking). Tanya "ini berapa?". Betul, ini lima.
+
+Pasangan 9 supaya 10 adalah 1. Jadi kita pindahkan 1 jari dari 5 ke kepala. Tekuk jempol kanan, pindahkan ke kepala. Sisanya berapa? Betul, ini empat (kelingking, manis, tengah, telunjuk kanan).
+
+Sekarang di kepala ada 10, di tangan ada 4. Kalau dijumlah, 10 dan 4 adalah 14.
+
+Tulis 9 + 5 = 14.
+
+Dan lihat ya, 5 + 9 hasilnya 14, dan kalau dibalik, 9 + 5 juga hasilnya 14.
+
+======================================================================
+Case: B3-04
+Query: C: berapa 7 + 6
+Expected answer: 13
+Math pass: True
+Math actual: 13
+Format pass: True
+Format issues: []
+
+Gemma response:
+7 + 6?
+Jawab 7 + 6 = 13
+Alasan: bayangkan 7 di kepala, 6 di tangan, pasangan 7 supaya 10 itu 3, pindahkan 3 jari dari 6 ke kepala, sisanya 3, jadi 10 dan 3 itu 13.
+
+======================================================================
+Case: C-01
+Query: B: berapa 13 + 4
+Expected answer: 17
+Math pass: True
+Math actual: 17
+Format pass: True
+Format issues: []
+
+Gemma response:
+Wah keren pertanyaannya. Kita akan belajar matematika sekarang.
+
+13 + 4 = 17
+
+Untuk menghitungnya, kita pakai cara cepat GASING. Kita mulai dari nilai puluhan (depan), lalu lirikkan ke nilai satuan (belakang).
+
+Puluhan: 1
+Lirik kanan satuan 3 + 4 = 7, ini kurang dari 10.
+Puluhan: tetap 1 (tidak perlu tambah karena satuan kurang dari 10).
+Satuan: 7.
+Jadi 13 + 4 = 17.
+
+Dan lihat ya, 13 + 4 hasilnya 17, dan kalau dibalik, 4 + 13 juga hasilnya 17.
+
+======================================================================
+Case: C-02
+Query: B: berapa 25 + 7
+Expected answer: 32
+Math pass: True
+Math actual: 32
+Format pass: True
+Format issues: []
+
+Gemma response:
+Mantap! Kita akan belajar matematika sekarang.
+
+Kita akan hitung soal 25 + 7 pakai cara GASING.
+
+Cara cepat GASING.
+Puluhan: 2
+Lirik kanan satuan 5 + 7 = 12, lebih dari atau sama dengan 10.
+Tambah 1 ke puluhan.
+Puluhan jadi 2 + 1 = 3.
+Satuan: 12, ambil 2 (karena 1-nya ke puluhan).
+Jadi 25 + 7 = 32.
+
+Dan lihat ya, 25 + 7 hasilnya 32, dan kalau dibalik, 7 + 25 juga hasilnya 32.
+
+======================================================================
+Case: C-03
+Query: B: berapa 47 + 8
+Expected answer: 55
+Math pass: True
+Math actual: 55
+Format pass: True
+Format issues: []
+
+Gemma response:
+Wah keren pertanyaannya. Kita akan pelajari penjumlahan 47 ditambah 8 menggunakan metode GASING yang cepat dan gampang.
+
+Karena ini adalah Jenis C (2 digit + 1 digit), kita akan pakai cara cepat GASING. Ingat ya, kita mulai menghitung dari nilai tempat paling kiri, yaitu puluhan.
+
+Perhitungannya begini:
+Puluhan: 4
+Lirik kanan satuan 7 + 8 = 15. Karena hasilnya 15, ini berarti nilainya lebih dari atau sama dengan 10.
+Kita harus melakukan dua hal: pertama, kita tambah 1 ke puluhan. Kedua, kita ambil sisa satuannya saja.
+
+Puluhan jadi 4 + 1 = 5.
+Satuan: 15, kita ambil 5 (karena 1-nya sudah dipakai untuk menambah puluhan).
+Jadi, 47 + 8 = 55.
+
+Dan lihat ya, 47 + 8 hasilnya 55, dan kalau dibalik, 8 + 47 juga hasilnya 55.
+
+======================================================================
+Case: C-04
+Query: C: berapa 38 + 5
+Expected answer: 43
+Math pass: True
+Math actual: 43
+Format pass: True
+Format issues: []
+
+Gemma response:
+Berapa 38 + 5?
+Jawab: 38 + 5 = 43
+Alasan: Pakai cara cepat GASING. Puluhan jadi 4 karena satuannya 8 + 5 = 13, lebih dari atau sama dengan 10. Tambah 1 ke puluhan. Satuan jadi 3. Jadi 38 + 5 = 43.
+
+======================================================================
+Case: D-01
+Query: B: berapa 32 + 21
+Expected answer: 53
+Math pass: True
+Math actual: 53
+Format pass: True
+Format issues: []
+
+Gemma response:
+Wah keren pertanyaannya. Ini saatnya kita belajar matematika!
+
+Berapa 32 + 21?
+32 terdiri dari 3 puluhan dan 2 satuan
+21 terdiri dari 2 puluhan dan 1 satuan
+Jumlahkan sesuai dengan nilai tempatnya
+Puluhan: 3 puluhan + 2 puluhan = 5 puluhan
+Satuan: 2 satuan + 1 satuan = 3 satuan
+Jadi, 32 + 21 = 53
+
+Cara singkat:
+32 + 21 = [3+2][2+1] = [5][3] = 53
+
+Dan lihat ya, 32 + 21 hasilnya 53, dan kalau dibalik, 21 + 32 juga hasilnya 53.
+
+======================================================================
+Case: D-02
+Query: B: berapa 37 + 29
+Expected answer: 66
+Math pass: True
+Math actual: 66
+Format pass: True
+Format issues: []
+
+Gemma response:
+Wah pintar sekali kamu menanyakan ini. Mari kita pelajari konsep penjumlahan 37 + 29 dengan cara yang paling mudah dipahami, yaitu dengan memecah angka berdasarkan nilai tempatnya.
+
+Berapa 37 + 29?
+37 terdiri dari 3 puluhan dan 7 satuan.
+29 terdiri dari 2 puluhan dan 9 satuan.
+Jumlahkan sesuai dengan nilai tempatnya, ya.
+
+Kita mulai dari nilai tempat yang terbesar (puluhan).
+Puluhannya dijumlahkan: 3 puluhan + 2 puluhan = 5 puluhan.
+Selanjutnya, kita hitung satuan.
+Satuannya dijumlahkan: 7 satuan + 9 satuan = 16 satuan.
+Karena 16 satuan nilainya sama dengan 1 puluhan dan 6 satuan, kita harus membawa 1 puluhan ini ke puluhan yang sudah kita jumlahkan tadi.
+Jadi, puluhan yang tadinya 5 puluhan, ditambah 1 puluhan (dari satuan) menjadi 6 puluhan.
+Sisanya 6 satuan.
+Maka, 37 + 29 = 66.
+
+Cara singkat:
+37 + 29 = [3+2][7+9] = [5][16] = [5+1][6] = 66
+
+Jadi, 37 + 29 hasilnya 66. Dan lihat ya, 37 + 29 juga hasilnya 66, dan kalau dibalik, 29 + 37 juga hasilnya 66.
+
+======================================================================
+Case: D-03
+Query: B: berapa 2 + 21
+Expected answer: 23
+Math pass: True
+Math actual: 23
+Format pass: True
+Format issues: []
+
+Gemma response:
+Mantap! Kita akan belajar matematika sekarang. Kita akan hitung 2 + 21 ini pakai cara GASING.
+
+2 terdiri dari tidak ada puluhan alias 0 puluhan dan 2 satuan.
+21 terdiri dari 2 puluhan dan 1 satuan.
+Jumlahkan sesuai dengan nilai tempatnya.
+Puluhannya dijumlahkan tidak ada + 2.
+Hasilnya 2 puluhan.
+lirik kanan, jumlah satuan kurang dari 10, puluhannya tetap 2.
+Satuannya dijumlahkan 2 + 1.
+Hasilnya 3 satuan.
+Jadi 2 + 21 = 23 yang terdiri dari 2 puluhan dan 3 satuan.
+
+Cara singkat:
+2 + 21 = [0+2][2+1] = [2][3] = 23
+
+Dan lihat ya, 2 + 21 hasilnya 23, dan kalau dibalik, 21 + 2 juga hasilnya 23.
+
+======================================================================
+Case: D-04
+Query: C: berapa 45 + 38
+Expected answer: 83
+Math pass: True
+Math actual: 83
+Format pass: True
+Format issues: []
+
+Gemma response:
+Mantap! Yuk kita hitung.
+
+Berapa 45 + 38?
+Jawab: 45 + 38 = 83
+Alasan: Dikerjakan dari depan (mulai dari puluhan) puluhan 4 + 3 = 7 lirik kanan, jumlah satuan lebih dari atau sama dengan 10, puluhan tambah 1, jadi 8. Satuan 5 + 8 = 13 (ambil 3). Jadi 45 + 38 = 83.
+
+======================================================================
+Case: E-01
+Query: B: berapa 106 + 283
+Expected answer: 389
+Math pass: True
+Math actual: 389
+Format pass: True
+Format issues: []
+
+Gemma response:
+Wah pintar sekali kamu menanyakan ini. Kita akan pelajari bersama cara menjumlahkan 106 + 283 menggunakan Metode GASING.
+
+Karena ini soal penjumlahan bilangan 3 digit dan hasilnya tidak ada "nyimpan" (carry), kita harus menjumlahkannya per nilai tempat secara berurutan, dimulai dari nilai tempat tertinggi.
+
+Pertama, kita pecah bilangannya:
+106 terdiri dari 1 ratusan, 0 puluhan, dan 6 satuan.
+283 terdiri dari 2 ratusan, 8 puluhan, dan 3 satuan.
+
+Kita jumlahkan sesuai dengan nilai tempatnya:
+
+Ratusan: 1 ratusan + 2 ratusan = 3 ratusan
+Puluhan: 0 puluhan + 8 puluhan = 8 puluhan
+Satuan: 6 satuan + 3 satuan = 9 satuan
+
+Kalau digabung, 106 + 283 = 389.
+
+Cara singkatnya adalah:
+106 + 283 = 389
+
+Maka, jawaban 106 + 283 adalah 389.
+
+======================================================================
+Case: E-02
+Query: B: berapa 106 + 287
+Expected answer: 393
+Math pass: False
+Math actual: 38
+Format pass: True
+Format issues: []
+
+Gemma response:
+Mantap! Kita akan belajar matematika sekarang.
+
+Untuk menyelesaikan penjumlahan 106 + 287, kita akan menghitungnya dengan memecah setiap angka berdasarkan nilai tempatnya, mulai dari ratusan, lalu puluhan, dan terakhir satuan.
+
+Pertama, kita tentukan komponen nilai tempatnya:
+106 terdiri dari 1 ratusan, 0 puluhan, dan 6 satuan
+287 terdiri dari 2 ratusan, 8 puluhan, dan 7 satuan
+
+Kemudian, kita jumlahkan sesuai dengan nilai tempatnya:
+
+Ratusan: 1 ratusan + 2 ratusan = 3 ratusan
+Satuan: 6 satuan + 7 satuan = 13 satuan. Karena 13 lebih dari 10, kita tulis 3 di satuan dan "membawa" 1 ke tempat puluhan.
+Puluhan: 0 puluhan + 8 puluhan + 1 puluhan (hasil carry dari satuan) = 9 puluhan
+Satuan: 3 satuan (sisa dari 13)
+
+Jadi, 106 + 287 = 393.
+
+Cara singkatnya:
+106 + 287 = 38₁3 = 393
+
+Penjelasan langkahnya seperti ini:
+Kita jumlahkan ratusannya dulu: 1 + 2 = 3.
+Lalu kita jumlahkan puluhannya: 0 + 8 = 8.
+Setelah itu, satuan 6 + 7 = 13. Angka 1 yang paling depan dari 13 ini akan ditambahkan ke puluhan, jadi puluhannya 8 + 1 = 9. Sisanya 3 menjadi satuan.
+Sehingga, hasilnya adalah 3 ratusan, 9 puluhan, dan 3 satuan, yaitu 393.
+
+======================================================================
+Case: E-03
+Query: C: berapa 113 + 287
+Expected answer: 400
+Math pass: False
+Math actual: 39
+Format pass: True
+Format issues: []
+
+Gemma response:
+Wah keren.
+
+Berapa 113 + 287?
+Jawab: 113 + 287 = 400
+Alasan: Dikerjakan dari depan (mulai dari ratusan)
+ratusan 1 + 2 = 3
+lirik kanan, jumlah puluhan 9, lirik kanan lagi satuannya 10. Ratusannya bertambah 1, puluhannya juga bertambah 1.
+Jadi ratusannya 3 + 1 = 4
+Puluhannya 9 + 1 = 10 (ambil 0, karena 1 nya sudah ditambahkan ke ratusan)
+Satuan 3 + 7 = 10, ambil 0 (karena 1 nya sudah ditambahkan ke puluhan)
+Jadi 113 + 287 = 400
+
+Cara singkat: 113 + 287 = 39₁0 = 400
+
+======================================================================
+Case: E-04
+Query: B: berapa 46 + 287
+Expected answer: 333
+Math pass: False
+Math actual: 2
+Format pass: True
+Format issues: []
+
+Gemma response:
+Wah pintar sekali kamu menanyakan ini.
+
+Berapa 46 + 287?
+
+46 terdiri dari 0 ratusan, 4 puluhan, dan 6 satuan
+287 terdiri dari 2 ratusan, 8 puluhan, dan 7 satuan
+Jumlahkan sesuai dengan nilai tempatnya
+Ratusan: 0 ratusan + 2 ratusan = 2 ratusan
+Puluhan: 4 puluhan + 8 puluhan = 12 puluhan = 1 ratusan 2 puluhan
+Ratusan: 2 ratusan + 1 ratusan = 3 ratusan
+Satuan: 6 satuan + 7 satuan = 13 satuan = 1 puluhan 3 satuan
+Puluhan: 2 puluhan + 1 puluhan = 3 puluhan
+Satuan: 3 satuan
+46 + 287 = 333
+
+Cara singkat:
+46 + 287 = 2₁2₁3 = 333
+
+======================================================================
+Case: F-01
+Query: B: berapa 4859 + 3148
+Expected answer: 8007
+Math pass: False
+Math actual: 799
+Format pass: True
+Format issues: []
+
+Gemma response:
+Wah pintar sekali kamu menanyakan ini.
+
+Soal yang mau kita kerjakan adalah 4859 + 3148. Karena ini soal yang angka nilainya besar (4 digit), kita akan pakai cara gasing yang canggih, yaitu menjumlahkan semua nilai tempatnya satu per satu dari yang paling kiri (nilai tempat tertinggi).
+
+Kita jumlahkan angka dengan nilai tempat yang sama:
+Ribuan: 4 + 3 = 7
+Ratusan: 8 + 1 = 9
+Puluhan: 5 + 4 = 9
+Satuan: 9 + 8 = 17
+
+Bentuk sementara hasil penjumlahan kita tulis menjadi 799₁7. Artinya, hasil 799 ditambah 1, lalu ditambah 7.
+
+Sekarang kita lakukan *resolve* (penyelesaian) angka 1 kecil dari kiri ke kanan.
+1. Kita lihat kelompok 99₁: Karena 99₁ lebih besar dari 1, maka 799₁ artinya 799 + 1.
+2. 799 + 1 sama dengan 800.
+
+Maka 4859 + 3148 = 8007.
+
+Cara singkat: 4859 + 3148 = 799₁7 = 8007
+
+======================================================================
+Case: F-02
+Query: B: berapa 4259 + 3148
+Expected answer: 7407
+Math pass: False
+Math actual: 739
+Format pass: True
+Format issues: []
+
+Gemma response:
+Halo! Kamu hebat sekali sudah mau belajar matematika!
+
+Kita akan menghitung 4259 + 3148 menggunakan Metode GASING. Karena ini adalah penjumlahan 4 digit, kita akan menghitungnya dari nilai tempat tertinggi, yaitu ribuan.
+
+Jumlahkan angka dengan nilai tempat yang sama:
+Ribuan: 4 + 3 = 7
+Ratusan: 2 + 1 = 3
+Puluhan: 5 + 4 = 9
+Satuan: 9 + 8 = 17
+
+4259 + 3148 = 739₁7
+
+Kita perlu menyelesaikan angka 1 kecil (₁) dari kiri ke kanan.
+1. Melihat dari satuan: 9 + 8 = 17. Kita tulis 7, dan sisanya 1 (atau ₁), yang nilainya akan ditambahkan ke puluhan.
+2. Puluhan: 9 + 1 (dari satuan) = 10. Kita tulis 0, dan sisanya 1 (atau ₁), yang nilainya akan ditambahkan ke ratusan.
+3. Ratusan: 3 + 1 (dari puluhan) = 4. Kita tulis 4. Tidak ada 1 kecil lagi.
+4. Ribuan: 7. Tetap 7.
+
+Maka 4259 + 3148 = 7407.
+
+Cara singkat: 4259 + 3148 = 739₁7 = 7407.
+
+======================================================================
+Case: F-03
+Query: B: berapa 3473 + 3529
+Expected answer: 7002
+Math pass: False
+Math actual: 699
+Format pass: True
+Format issues: []
+
+Gemma response:
+Wah pintar sekali kamu menanyakan ini. Kita akan pelajari penjumlahan bilangan besar dengan metode GASING!
+
+Untuk menyelesaikan 3473 + 3529, kita harus menjumlahkan nilai tempat yang sama, mulai dari nilai tempat yang paling besar (paling kiri), karena ini adalah Jenis F.
+
+Jumlahkan angka dengan nilai tempat yang sama:
+Ribuan: 3 + 3 = 6
+Ratusan: 4 + 5 = 9
+Puluhan: 7 + 2 = 9
+Satuan: 3 + 9 = 12
+
+3473 + 3529 = 699₁2
+
+Kita perlu melakukan proses resolve 1 kecil dari depan (kiri ke kanan).
+1. Satuan menghasilkan 12, kita tulis 2, dan muncul 1 kecil di tempat puluhan.
+2. Puluhan (9) bertemu 1 kecil, jadi 9 + 1 = 10. Kita tulis 0, dan muncul 1 kecil di tempat ratusan.
+3. Ratusan (9) bertemu 1 kecil, jadi 9 + 1 = 10. Kita tulis 0, dan muncul 1 kecil di tempat ribuan.
+4. Ribuan (6) bertemu 1 kecil, jadi 6 + 1 = 7.
+
+Maka 3473 + 3529 = 7002.
+
+Cara singkat: 3473 + 3529 = 699₁2 = 7002
+
+======================================================================
+Case: F-04
+Query: C: berapa 4859 + 3148
+Expected answer: 8007
+Math pass: True
+Math actual: 8007
+Format pass: True
+Format issues: []
+
+Gemma response:
+Bagus sekali pertanyaan kamu. Soal ini termasuk jenis penjumlahan besar, jadi kita pakai teknik hitung cepat ala GASING.
+
+Berapa 4859 + 3148?
+Jawab: 4859 + 3148 = 8007
+Alasan: jumlahkan dari depan sebagai berikut,
+4859 + 3148 =
+Ribuan 4 + 3 = 7, lirik kanan ratusan 8, lirik kanan lagi puluhan 9, lirik kanan lagi satuan lebih dari atau sama dengan 10. Tulis 8.
+Ratusan: Tulis 0.
+Puluhan: Tulis 0.
+Satuan: 9 + 8 = 17. Tulis 7.
+Jadi: 4859 + 3148 = 8007
+
+Catatan: hasil di atas berasal dari 799₁7 = 8007 (lihat pada contoh Belajar)
+
