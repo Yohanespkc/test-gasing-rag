@@ -4,7 +4,7 @@
 
 Cara pakai:
     python 03_chat.py
-    python 03_chat.py --model gemma3:4b
+    python 03_chat.py --model gemma4:e4b
     python 03_chat.py --model qwen2.5:7b
     python 03_chat.py --no-retrieval   # mode baseline tanpa RAG (testing)
     python 03_chat.py --debug          # tampilkan chunks yang ter-retrieve
@@ -52,8 +52,22 @@ def is_math_query(text: str) -> bool:
     return has_digit and has_plus
 
 
-def should_retrieve(user_input: str) -> bool:
-    """Tentukan apakah perlu retrieval untuk pesan ini."""
+def should_retrieve(user_input: str, filter_topik: str = None) -> bool:
+    """Tentukan apakah perlu retrieval untuk pesan ini.
+
+    Logic:
+    - Kalau filter_topik di-set eksplisit (penjumlahan/filosofi_gasing):
+      selalu retrieve (user commit ke mode tertentu)
+    - Kalau filter_topik=None (default all):
+        - Follow-up trigger (B/C): retrieve
+        - Math query: retrieve
+        - Greeting/pertanyaan umum: skip
+    """
+    # User explicitly chose a topic — always retrieve
+    if filter_topik is not None:
+        return True
+
+    # Original logic for no-filter mode
     if is_followup_trigger(user_input):
         return True  # User pilih mode untuk soal sebelumnya, butuh konteks
     if is_math_query(user_input):
@@ -136,7 +150,7 @@ def chat_loop(model: str, use_retrieval: bool, debug: bool, filter_topik: Option
             continue
 
         # Retrieval (kalau diaktifkan dan diperlukan)
-        if use_retrieval and should_retrieve(user_input):
+        if use_retrieval and should_retrieve(user_input, filter_topik):
             try:
                 retrieved = retrieve_chunks(user_input, top_k=5, expand_shared=True,
                                             filter_topik=filter_topik)
@@ -195,8 +209,8 @@ def main():
     parser = argparse.ArgumentParser(description="GASING RAG interactive chat")
     parser.add_argument(
         "--model",
-        default="gemma3:4b",
-        help="Ollama model untuk LLM (default: gemma3:4b)",
+        default="gemma4:e4b",
+        help="Ollama model untuk LLM (default: gemma4:e4b)",
     )
     parser.add_argument(
         "--no-retrieval",
