@@ -112,7 +112,24 @@ def get_chroma_collection(create_if_missing=False):
         return client.create_collection(name=COLLECTION_NAME, metadata={"hnsw:space": "cosine"})
     return client.get_collection(name=COLLECTION_NAME)
 
-def retrieve_chunks(query, top_k=3, expand_shared=True, filter_topik="penjumlahan", use_rule_based=True):
+def retrieve_chunks(query, top_k=3, expand_shared=True, filter_topik=None, use_rule_based=True):
+    """
+    Retrieve chunks dari ChromaDB dengan hybrid retrieval.
+
+    Args:
+        query: Query string dari user
+        top_k: Jumlah chunks dari semantic search (default 3)
+        expand_shared: Apakah expand chunks via konsep_terkait (default True)
+        filter_topik: Filter chunks by topik. None = no filter (all topics).
+                      "penjumlahan" = chunks matematika saja.
+                      "filosofi_gasing" = chunks filosofi saja.
+        use_rule_based: Apakah pakai rule-based classifier untuk soal
+                        matematika (default True). Hanya efektif untuk
+                        filter_topik="penjumlahan" atau None.
+
+    Returns:
+        List of chunks dengan metadata dan distance.
+    """
     coll = get_chroma_collection(create_if_missing=False)
     forced_ids, classified_jenis = set(), None
     if use_rule_based:

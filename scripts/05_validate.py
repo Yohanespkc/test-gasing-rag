@@ -257,7 +257,7 @@ def run_classify(case):
 
 def run_retrieve(case):
     """Test retrieval. Returns (passed, chunks)."""
-    chunks = retrieve_chunks(case["query"])
+    chunks = retrieve_chunks(case["query"], filter_topik="penjumlahan")
     expected_ids = JENIS_TO_CHUNKS.get(case["expected_jenis"], [])
     retrieved_ids = [c["id"] for c in chunks]
     found = [eid for eid in expected_ids if eid in retrieved_ids]
@@ -267,7 +267,7 @@ def run_retrieve(case):
 def run_gemma(case, model):
     """Run query through Gemma. Returns response text."""
     system = load_system_prompt()
-    chunks = retrieve_chunks(case["query"])
+    chunks = retrieve_chunks(case["query"], filter_topik="penjumlahan")
     context = format_context(chunks)
     user_msg = f"{case['query']}\n\n<konteks_dokumen>\n{context}\n</konteks_dokumen>"
 

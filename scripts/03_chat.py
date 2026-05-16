@@ -75,11 +75,17 @@ def build_augmented_message(user_input: str, context: str) -> str:
 </konteks_dokumen>"""
 
 
-def chat_loop(model: str, use_retrieval: bool, debug: bool):
+def chat_loop(model: str, use_retrieval: bool, debug: bool, filter_topik: Optional[str] = None):
     """Main interactive loop."""
+    topik_label = filter_topik if filter_topik else "semua (no filter)"
     print("=" * 70)
     print(f"GASING Tutor RAG (model: {model}, retrieval: {use_retrieval})")
-    print("Ketik /quit untuk keluar, /debug untuk toggle debug mode")
+    print(f"Topik filter : {topik_label}")
+    print("Perintah dalam sesi:")
+    print("  /quit    - keluar")
+    print("  /debug   - toggle mode debug")
+    print("  /clear   - reset riwayat percakapan")
+    print("  /topik   - lihat atau ganti topik filter")
     print("=" * 70)
 
     system_prompt = load_system_prompt()
@@ -107,11 +113,33 @@ def chat_loop(model: str, use_retrieval: bool, debug: bool):
             history = [{"role": "system", "content": system_prompt}]
             print("[history cleared]")
             continue
+        if user_input.startswith("/topik"):
+            parts = user_input.split(maxsplit=1)
+            if len(parts) == 1:
+                current = filter_topik if filter_topik else "semua"
+                print(f"Topik aktif: {current}")
+                print("Cara ganti:")
+                print("  /topik penjumlahan")
+                print("  /topik filosofi_gasing")
+                print("  /topik all")
+            else:
+                new_topik = parts[1].strip()
+                if new_topik == "all":
+                    filter_topik = None
+                    print("Topik diubah ke: semua (no filter)")
+                elif new_topik in ("penjumlahan", "filosofi_gasing"):
+                    filter_topik = new_topik
+                    print(f"Topik diubah ke: {new_topik}")
+                else:
+                    print(f"Topik tidak dikenal: {new_topik}")
+                    print("Pilihan valid: penjumlahan, filosofi_gasing, all")
+            continue
 
         # Retrieval (kalau diaktifkan dan diperlukan)
         if use_retrieval and should_retrieve(user_input):
             try:
-                retrieved = retrieve_chunks(user_input, top_k=5, expand_shared=True)
+                retrieved = retrieve_chunks(user_input, top_k=5, expand_shared=True,
+                                            filter_topik=filter_topik)
             except Exception as e:
                 print(f"[ERROR retrieval: {e}]")
                 retrieved = []
@@ -180,12 +208,19 @@ def main():
         action="store_true",
         help="Tampilkan chunks yang ter-retrieve di setiap turn",
     )
+    parser.add_argument(
+        "--topik",
+        default=None,
+        choices=["penjumlahan", "filosofi_gasing"],
+        help="Filter retrieval ke topik tertentu (default: semua topik)",
+    )
     args = parser.parse_args()
 
     chat_loop(
         model=args.model,
         use_retrieval=not args.no_retrieval,
         debug=args.debug,
+        filter_topik=args.topik,
     )
 
 
