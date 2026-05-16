@@ -15,7 +15,7 @@
 
 | Aspek | Detail |
 |---|---|
-| **Stack** | Python · Ollama · ChromaDB · nomic-embed-text · Gemma 3:4b |
+| **Stack** | Python · Ollama · ChromaDB · nomic-embed-text · Gemma 4 (gemma4:e4b) |
 | **Chunks** | 22 (5 shared + 17 per jenis) |
 | **Topik** | Penjumlahan (v1.0.0) |
 | **Validation** | 100% math accuracy, 40 test cases |

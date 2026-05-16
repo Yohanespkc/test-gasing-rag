@@ -140,7 +140,7 @@ Modelfile meng-embed SYSTEM prompt ringkas + parameter (temperature, dll.)
 
 **Opsi B — Runtime Injection:**
 ```bash
-python 03_chat.py --model gemma3:4b
+python 03_chat.py --model gemma4:e4b
 ```
 SYSTEM prompt disuntik dari `system_prompt.txt` setiap sesi.
 

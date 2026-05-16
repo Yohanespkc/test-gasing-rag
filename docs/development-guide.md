@@ -51,7 +51,7 @@ ollama serve &    # atau jalankan di terminal terpisah
 ollama pull nomic-embed-text
 
 # Pull LLM (opsional jika ingin pakai versi berbeda)
-ollama pull gemma3:4b    # ~2.5 GB
+ollama pull gemma4:e4b   # model yang divalidasi (gemma4:e4b)
 ```
 
 Verifikasi:
@@ -96,7 +96,7 @@ cd scripts
 python 03_chat.py --model gasing-rag
 
 # Dengan model langsung
-python 03_chat.py --model gemma3:4b
+python 03_chat.py --model gemma4:e4b
 
 # Mode debug (tampilkan chunks yang ter-retrieve)
 python 03_chat.py --debug

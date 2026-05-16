@@ -24,7 +24,7 @@
   "current_step": "completed",
   "findings": {
     "project_classification": "monolith, 1 part, type=data/AI pipeline",
-    "technology_stack": "Python 3.10+, Ollama, ChromaDB, nomic-embed-text, Gemma 3:4b",
+    "technology_stack": "Python 3.10+, Ollama, ChromaDB, nomic-embed-text, Gemma 4 (gemma4:e4b)",
     "architecture_pattern": "Hybrid RAG Pipeline (rule-based + semantic retrieval)"
   },
   "project_types": [

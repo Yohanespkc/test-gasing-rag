@@ -27,7 +27,7 @@ Sistem ini merupakan **evolusi arsitektur** dari pendekatan *prompt-only* (model
 |---|---|---|---|
 | **Bahasa** | Python | 3.10+ | Semua pipeline |
 | **LLM Runtime** | Ollama | ≥0.4.0 (client) | Menjalankan model lokal |
-| **LLM Model** | Gemma 3:4b / Gemma 4 | — | Generasi respons tutor |
+| **LLM Model** | Gemma 4 (gemma4:e4b) | — | Generasi respons tutor |
 | **Embedding Model** | nomic-embed-text | 274 MB | Vector embedding 768 dimensi |
 | **Vector Database** | ChromaDB | ≥0.5.0 | Penyimpanan dan pencarian vektor |
 | **Knowledge Base** | Markdown (22 chunks) | — | Dokumen pedagogik GASING |
@@ -55,7 +55,7 @@ User Query
 [Context Formatting]           ← format_context()
     │ Susun: shared chunks dulu → per_jenis chunks
     ▼
-[Ollama LLM Call]              ← gemma3:4b / gasing-rag modelfile
+[Ollama LLM Call]              ← gemma4:e4b / gasing-rag modelfile
     │ SYSTEM prompt + history + augmented user message
     ▼
 Response Tutor GASING
