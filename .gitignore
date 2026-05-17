@@ -5,3 +5,6 @@ __pycache__/
 .pytest_cache/
 chroma_db/
 .DS_Store
+
+# Source PDFs (large binaries, regenerate Markdown if needed)
+Sources/*.pdf
