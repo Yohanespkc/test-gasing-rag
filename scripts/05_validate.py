@@ -21,6 +21,10 @@ Cara pakai:
     python 05_validate.py --limit 10
         Run cuma 10 cases pertama (untuk test cepat)
 
+    python 05_validate.py --mode api --base-url http://localhost:8000
+        Validasi via FastAPI HTTP endpoint (Story 1.5)
+        Cocok untuk integration test: pastikan API wrap tidak turunkan akurasi
+
 Output:
     - Console: ringkasan per jenis dan summary total
     - validation_report.json: detail per-case results
@@ -36,6 +40,11 @@ from datetime import datetime
 from pathlib import Path
 
 import ollama
+try:
+    import httpx
+    _HTTPX_AVAILABLE = True
+except ImportError:
+    _HTTPX_AVAILABLE = False
 
 from utils import (
     JENIS_TO_CHUNKS,
@@ -265,7 +274,7 @@ def run_retrieve(case):
 
 
 def run_gemma(case, model):
-    """Run query through Gemma. Returns response text."""
+    """Run query through Gemma directly via Ollama. Returns response text."""
     system = load_system_prompt()
     chunks = retrieve_chunks(case["query"], filter_topik="penjumlahan")
     context = format_context(chunks)
@@ -278,6 +287,39 @@ def run_gemma(case, model):
 
     response = ollama.chat(model=model, messages=messages)
     return response["message"]["content"]
+
+
+def run_api(case, base_url: str) -> str:
+    """Run query through FastAPI /chat endpoint. Returns response text.
+
+    Story 1.5: Memvalidasi bahwa API wrap tidak menurunkan akurasi matematik
+    dibandingkan baseline CLI (run_gemma).
+
+    Note: Query di test cases menggunakan prefix CLI "B: " atau "C: ".
+    run_api strip prefix tersebut dan kirim sebagai field `mode` terpisah.
+    """
+    if not _HTTPX_AVAILABLE:
+        raise RuntimeError(
+            "httpx tidak terinstall. Jalankan: pip install httpx"
+        )
+
+    # Strip CLI prefix "B: " / "C: " dari query — API menerima teks bebas
+    raw_query = case["query"]
+    import re as _re
+    clean_query = _re.sub(r'^[BCbc][\s:.]+', '', raw_query).strip()
+
+    payload = {
+        "query": clean_query,
+        "mode": case.get("mode", "B"),
+        "filter_topik": "penjumlahan",
+    }
+
+    with httpx.Client(timeout=90.0) as client:
+        resp = client.post(f"{base_url}/chat", json=payload)
+        resp.raise_for_status()
+        data = resp.json()
+        return data["response"]
+
 
 
 def check_math(case, response):
@@ -319,18 +361,28 @@ def main():
                         help="Model Ollama (default: gemma4:e4b)")
     parser.add_argument("--limit", type=int, default=None,
                         help="Limit jumlah cases (untuk test cepat)")
+    parser.add_argument("--mode", choices=["cli", "api"], default="cli",
+                        help="'cli' = direct Ollama (default), 'api' = via FastAPI HTTP")
+    parser.add_argument("--base-url", default="http://localhost:8000",
+                        help="Base URL FastAPI server (untuk --mode api, default: http://localhost:8000)")
     args = parser.parse_args()
 
     cases = TEST_CASES[:args.limit] if args.limit else TEST_CASES
     n = len(cases)
+
+    use_api_mode = (args.mode == "api")
 
     print()
     print("=" * 70)
     print(f"GASING RAG: Validasi Besar ({n} test cases)")
     if args.quick:
         print(f"Mode: QUICK (classify + retrieve, no Gemma)")
+    elif use_api_mode:
+        print(f"Mode: API (via FastAPI {args.base_url})")
+        estimated_min = (n * 20) / 60
+        print(f"Estimasi waktu: ~{estimated_min:.0f} menit")
     else:
-        print(f"Mode: FULL (classify + retrieve + Gemma {args.model})")
+        print(f"Mode: CLI (direct Ollama {args.model})")
         estimated_min = (n * 12) / 60
         print(f"Estimasi waktu: ~{estimated_min:.0f} menit")
     print("=" * 70)
@@ -360,7 +412,10 @@ def main():
         # Gemma + checks
         if not args.quick:
             try:
-                response = run_gemma(case, args.model)
+                if use_api_mode:
+                    response = run_api(case, args.base_url)
+                else:
+                    response = run_gemma(case, args.model)
                 result["gemma_response"] = response
                 math_pass, math_actual = check_math(case, response)
                 result["math_pass"] = math_pass
@@ -446,7 +501,8 @@ def main():
     report = {
         "timestamp": datetime.now().isoformat(),
         "model": args.model if not args.quick else "n/a",
-        "mode": "quick" if args.quick else "full",
+        "validation_mode": "quick" if args.quick else ("api" if use_api_mode else "cli"),
+        "base_url": args.base_url if use_api_mode else None,
         "total_cases": n,
         "duration_seconds": elapsed,
         "results": results,

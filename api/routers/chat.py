@@ -80,13 +80,14 @@ async def chat(req: ChatRequest):
         )
 
     # 2. Build prompt
-    mode_label = "Belajar (step-by-step)" if req.mode == "B" else "Mencongak (cepat)"
+    # KRITIS: system_prompt.txt mensyaratkan pesan dimulai dengan "B:" atau "C:"
+    # sebagai trigger mode. Tanpa prefix ini model akan menolak menjawab.
+    mode_prefix = f"{req.mode}:" if req.mode in ("B", "C") else "B:"
     context_note = f"\nSoal yang sedang dikerjakan siswa: {req.soal_context}" if req.soal_context else ""
 
     user_message = (
-        f"Mode: {mode_label}{context_note}\n\n"
-        f"Pertanyaan siswa: {req.query}\n\n"
-        f"--- Panduan Metode GASING ---\n{context}"
+        f"{mode_prefix} {req.query}{context_note}\n\n"
+        f"<konteks_dokumen>\n{context}\n</konteks_dokumen>"
     )
 
     # 3. Call Ollama
@@ -97,14 +98,17 @@ async def chat(req: ChatRequest):
                 {"role": "system", "content": startup_state.system_prompt},
                 {"role": "user", "content": user_message},
             ],
-            options={"temperature": 0.3, "num_predict": 512},
+            options={"temperature": 0.3, "num_predict": 1024},
+            think=False,  # Nonaktifkan thinking mode gemma4 — pastikan content terisi
         )
-        response_text = result["message"]["content"].strip()
+        msg = result["message"]
+        response_text = (msg.content or "").strip()
     except Exception as e:
         raise HTTPException(
             status_code=503,
             detail=f"AI Tutor sedang tidak tersedia. Coba lagi dalam beberapa detik. ({type(e).__name__})",
         )
+
 
     latency_ms = int((time.perf_counter() - t_start) * 1000)
     topik = _detect_topik(req.query, req.filter_topik)
