@@ -184,5 +184,5 @@ Sacred Octagon (tampilkan ke siswa)
 
 ---
 
-*Dokumen ini dibuat dengan BMAD Product Brief Skill v6.6.0*  
+*Dokumen ini dibuat dengan BMAD Product Brief Skill v6.6.0 *  
 *Untuk dilanjutkan: `bmad-create-prd` menggunakan dokumen ini sebagai input*
